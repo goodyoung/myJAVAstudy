@@ -1,4 +1,4 @@
-package Sixthstep;
+package sixthstep;
 
 public class School {
     private  static School instance = new School();
@@ -9,5 +9,8 @@ public class School {
             instance = new School();
         }
         return instance;
+    }
+    public void createCar(){
+
     }
 }

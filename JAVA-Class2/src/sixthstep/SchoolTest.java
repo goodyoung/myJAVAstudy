@@ -1,4 +1,4 @@
-package Sixthstep;
+package sixthstep;
 
 import java.util.Calendar;
 
