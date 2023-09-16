@@ -37,4 +37,7 @@ public class BirthDay {
     public boolean isValid(){
         return isValid;
     }
+    public void printThis() {
+        System.out.println(this);
+    }
 }
