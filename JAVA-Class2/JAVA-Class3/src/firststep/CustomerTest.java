@@ -1,27 +1,24 @@
 package firststep;
 
+import java.util.ArrayList;
+
 public class CustomerTest {
     public static void main(String[] args) {
-        int price = 10000;
-        Customer customerlee = new Customer();
-        customerlee.setCustomerName("이");
-        customerlee.setCustomerId(10010);
-        customerlee.bonusPoint = 1000;
-        int cost = customerlee.calcPrice(price);
-        System.out.println(customerlee.showCustomerInfo() + " 지불 금액은 "+ cost + " 입니다.");
+        ArrayList<Customer> customerList = new ArrayList<Customer>();
 
+        Customer customerLee = new Customer(10010, "이순신");
+        Customer customerShin = new Customer(10020, "신사임당");
+        Customer customerHong = new GoldCustomer(10030, "홍길동");
+        Customer customerYul = new GoldCustomer(10040, "이율곡");
+        Customer customerKim = new VIPCustomer(10050, "김유신", 12345);
 
-        Customer customerkim = new VIPCustomer();
-        customerkim.setCustomerName("김");
-        customerkim.setCustomerId(10020);
-        customerkim.bonusPoint = 10000;
-        cost = customerkim.calcPrice(price);
-        System.out.println(customerkim.showCustomerInfo()+ " 지불 금액은 "+ cost + " 입니다.");
+        customerList.add(customerLee);
+        customerList.add(customerShin);
+        customerList.add(customerHong);
+        customerList.add(customerYul);
+        customerList.add(customerKim);
 
-        Customer customerPark = new VIPCustomer();
-        customerPark.setCustomerName("Park");
-        cost = customerPark.calcPrice(price);
-        System.out.println(customerPark.showCustomerInfo()+ " 지불 금액은 "+ cost + " 입니다.");
+        
         // 오버라이딩이 된 경우에 인스턴스(VIP)것이 불린다.
         // 참조할 수 있는건 customer 것이 참조가 되는것이지 생성되는 것이 아닌 게 아니다.
     }

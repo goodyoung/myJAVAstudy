@@ -6,7 +6,10 @@ public class Customer {
     protected String customerGrade;
     int bonusPoint;
     double bonusRatio;
-    public Customer(){
+    public Customer(int customerId,String customerName){
+        this.customerId = customerId;
+        this.customerName = customerName;
+
         customerGrade = "Silver";
         bonusRatio = 0.01;
         System.out.println("Customer ho");
