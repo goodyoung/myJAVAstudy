@@ -12,12 +12,20 @@ class Human extends Animal{
     public void move() {
         System.out.println("사람이 움직입니다.");
     }
+    public void readBooks() {
+        System.out.println("사람이 책을 읽습니다.");
+    }
+
 }
 class Tiger extends Animal{
     @Override
     public void move() {
         System.out.println("호랑이가 움직입니다.");
     }
+    public void hunting() {
+        System.out.println("호랑이가 사냥을 합니다.");
+    }
+
 }
 public class AnimalTest {
     public static void main(String[] args) {
@@ -35,8 +43,23 @@ public class AnimalTest {
 
         animalMove(human); // upcasting
         animalMove(tiger);
+
+        AnimalTest test = new AnimalTest();
+        test.testDownCasting(animalList);
     }
     public static void animalMove(Animal ani){
         ani.move();
+    }
+    public static void testDownCasting(ArrayList<Animal> animalList){
+        for(int i = 0 ; i< animalList.size(); i++){
+            Animal animal = animalList.get(i);
+            if( animal instanceof Human){
+                Human humans = (Human) animal;
+                humans.readBooks();
+            }else if (animal instanceof Tiger){
+                Tiger tigers = (Tiger) animal;
+                tigers.hunting();
+            }
+        }
     }
 }
