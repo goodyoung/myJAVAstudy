@@ -26,7 +26,7 @@ public class TotalTest {
             System.out.println("===============================\n" +
                     "이름   국어   수학  영어 총점  평균\n" +
                     "===============================");
-            for (int i = 0 ; i < n ; i++){
+            for (int j = 0 ; j < n ; j++){
                 System.out.printf("%s %d  %d  %d  %d  %d\n",t[i].studentName,t[i].mathScore,t[i].koreanScore,t[i].englishScore,t[i].totalSum(),t[i].mean());
             }
             System.out.printf("===============================");
