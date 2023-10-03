@@ -1,8 +1,5 @@
-package problem;
+package problem1;
 
-
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class my_test {
     public static void main(String[] args) {
