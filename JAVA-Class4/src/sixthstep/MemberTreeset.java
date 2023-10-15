@@ -1,29 +1,29 @@
-package fourthstep;
+package sixthstep;
 
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.TreeSet;
 
-public class MemberArrayList {
-    private ArrayList<Member> arrayList;
-    public MemberArrayList(){
-        arrayList = new ArrayList<>(); //default = 10 capacity
+public class MemberTreeset {
+    private TreeSet<Member> treeset;
+    public MemberTreeset(){
+        treeset = new TreeSet<>(); //default = 10 capacity
     }
     public void addMember(Member member){
-        arrayList.add(member);
+        treeset.add(member);
     }
     public boolean removeMember(int memberId){
-//        for (int i = 0 ; i<arrayList.size();i++){
-//            Member member = arrayList.get(i);
+//        for (int i = 0 ; i<treeset.size();i++){
+//            Member member = treeset.get(i);
 //            if (member.getMemberId() == memberId){
-//                arrayList.remove(i);
+//                treeset.remove(i);
 //                return true;
 //            }
 //        }
-        Iterator<Member> ir = arrayList.iterator();
+        Iterator<Member> ir = treeset.iterator();
         while (ir.hasNext()){
             Member member = ir.next();
             if (member.getMemberId() == memberId){
-                arrayList.remove(member);
+                treeset.remove(member);
                 return true;
             }
         }
@@ -31,11 +31,11 @@ public class MemberArrayList {
         return false;
     }
     public void showALLMembers(){
-//        for (int i = 0 ; i<arrayList.size();i++){
-//            Member member = arrayList.get(i);
+//        for (int i = 0 ; i<treeset.size();i++){
+//            Member member = treeset.get(i);
 //            System.out.println(member);
 //        }
-        Iterator<Member> ir = arrayList.iterator();
+        Iterator<Member> ir = treeset.iterator();
         while(ir.hasNext()){
             Member member = ir.next();
             System.out.println(member);

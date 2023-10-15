@@ -1,29 +1,30 @@
-package fourthstep;
+package fifthstep;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 
-public class MemberArrayList {
-    private ArrayList<Member> arrayList;
-    public MemberArrayList(){
-        arrayList = new ArrayList<>(); //default = 10 capacity
+public class MemberHashset {
+    private HashSet<Member> hashset;
+    public MemberHashset(){
+        hashset = new HashSet<>(); //default = 10 capacity
     }
     public void addMember(Member member){
-        arrayList.add(member);
+        hashset.add(member);
     }
     public boolean removeMember(int memberId){
-//        for (int i = 0 ; i<arrayList.size();i++){
-//            Member member = arrayList.get(i);
+//        for (int i = 0 ; i<hashset.size();i++){
+//            Member member = hashset.get(i);
 //            if (member.getMemberId() == memberId){
-//                arrayList.remove(i);
+//                hashset.remove(i);
 //                return true;
 //            }
 //        }
-        Iterator<Member> ir = arrayList.iterator();
+        Iterator<Member> ir = hashset.iterator();
         while (ir.hasNext()){
             Member member = ir.next();
             if (member.getMemberId() == memberId){
-                arrayList.remove(member);
+                hashset.remove(member);
                 return true;
             }
         }
@@ -31,11 +32,11 @@ public class MemberArrayList {
         return false;
     }
     public void showALLMembers(){
-//        for (int i = 0 ; i<arrayList.size();i++){
-//            Member member = arrayList.get(i);
+//        for (int i = 0 ; i<hashset.size();i++){
+//            Member member = hashset.get(i);
 //            System.out.println(member);
 //        }
-        Iterator<Member> ir = arrayList.iterator();
+        Iterator<Member> ir = hashset.iterator();
         while(ir.hasNext()){
             Member member = ir.next();
             System.out.println(member);
