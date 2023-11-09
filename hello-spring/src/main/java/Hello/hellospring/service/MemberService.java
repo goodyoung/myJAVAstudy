@@ -5,10 +5,12 @@ import Hello.hellospring.repository.MemberRepository;
 import Hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 //@Service //스프링이 올라올 때 스프링 컨테이너에 등록해준다
+@Transactional //jpa를 사용하려면 데이터 변경이 항상 transaction 안에서 실행이 되어야 한다.
 public class MemberService { //cmd + sft + T ->Test case 자동 생성
     private final MemberRepository memberRepository;
 
@@ -36,7 +38,7 @@ public class MemberService { //cmd + sft + T ->Test case 자동 생성
     }
     //전체 회원 조회
     public List<Member> findMembers(){
-        return memberRepository.finaAll();
+        return memberRepository.findAll();
     }
     public Optional<Member> findOne(Long memberId){
         return memberRepository.findById(memberId);
