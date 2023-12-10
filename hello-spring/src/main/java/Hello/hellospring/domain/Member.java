@@ -7,8 +7,12 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 //    @Column(name = "username")
-    private String name;
 
+//    private String name;
+private String userId; // 아이디
+    private String userPw; // 비밀번호
+    private String name; // 사용자 이름
+    private String userEmail; // 사용자 이메일
     public Long getId() {
         return id;
     }
